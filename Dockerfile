@@ -1,6 +1,7 @@
 FROM node:16
 
-WORKDIR /usr/src/app
+ENV APP_HOME /app
+WORKDIR $APP_HOME
 
 COPY package*.json ./
 RUN npm ci
