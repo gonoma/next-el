@@ -1,0 +1,19 @@
+{
+  "name": "efficient-learning-rep",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://gnm12ct@gmail.com@source.developers.google.com:2022/p/macro-crane-343512/r/efficient-learning-rep"
+  },
+  "author": "Gonzalo Nogueras",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
