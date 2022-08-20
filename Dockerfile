@@ -9,8 +9,5 @@ RUN npm ci
 # Bundle your app's source code inside the Docker image
 COPY . .
 
-# Address all issues (including breaking changes)
-RUN npm audit fix --force
-
 RUN npm run build
 
