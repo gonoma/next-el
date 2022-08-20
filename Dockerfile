@@ -9,4 +9,5 @@ RUN npm ci
 # Bundle your app's source code inside the Docker image
 COPY . .
 
-CMD [ "node", "main.js" ]
+RUN npm start
+
