@@ -6,4 +6,3 @@ RUN npm ci
 # Bundle your app's source code inside the Docker image
 COPY . .
 RUN npm run build
-RUN npm run serve
