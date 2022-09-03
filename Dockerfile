@@ -6,8 +6,5 @@ RUN npm install
 # Bundle your app's source code inside the Docker image
 COPY . .
 
-# build app
-RUN npm run build
-
-# start app
-CMD ["npm", "run", "start"]
+# build and start app
+CMD ["npm", "run", "build", "&&", "npm", "run", "start"]
