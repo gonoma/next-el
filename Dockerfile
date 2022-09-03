@@ -7,4 +7,4 @@ RUN npm install
 COPY . .
 
 # build and start app
-CMD ["npm", "run", "build", "&&", "npm", "run", "start"]
+CMD ["npm", "run", "dev"]
