@@ -10,7 +10,7 @@ RUN npm install
 COPY . .
 
 # build and start app
-RUN npm run build
+RUN next build
 # EXPOSE 3000
 # EXPOSE 8080
 CMD ["npm", "run", "start"]
