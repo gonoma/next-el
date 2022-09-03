@@ -1,8 +1,8 @@
-import React  from 'react';
+// import React  from 'react';
 import './navbar.module.css';
 import Link from "next/link";
 
-export default function Navbar() {
+const Navbar = (props: any) => {
   return (
     <nav className="nav">
       <ul>
@@ -11,15 +11,12 @@ export default function Navbar() {
             <p> TRAINING LINK </p> 
           </a> 
         </Link>
-        <Link href="/"> 
-          <a>
-            <p> HOME </p> 
-          </a> 
-        </Link>
       </ul>
     </nav>
-  )
-}
+  );
+};
+
+export default Navbar;
 
 // function CustomLink({ to, children, ...props }) {
 //   const resolvedPath = useResolvedPath(to)
