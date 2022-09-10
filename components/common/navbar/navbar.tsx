@@ -1,32 +1,52 @@
-// import React  from 'react';
-import './navbar.module.css';
 import Link from "next/link";
+import Image from "next/image";
+import React, { useState } from "react";
+// import Logo from "./Logo";
+import NavItem from "./navitem";
 
-const Navbar = (props: any) => {
+const MENU_LIST = [
+  { text: "Home", href: "/" },
+  { text: "About Us", href: "/about" },
+  { text: "Contact", href: "/contact" },
+  { text: "Reading", href: "/training" },
+];
+
+const Navbar = () => {
+  const [navActive, setNavActive] = useState(null);
+  const [activeIdx, setActiveIdx] = useState(-1);
+
   return (
-    <nav className="nav">
-      <ul>
-        <Link href="/training"> 
+    <header>
+      <nav className={`nav`}>
+        <Link href={"/"}>
           <a>
-            <p> TRAINING LINK </p> 
-          </a> 
+            <h1 className="logo">Efficient Learning</h1>
+          </a>
         </Link>
-      </ul>
-    </nav>
+        <div
+          onClick={() => setNavActive(!navActive)}
+          className={`nav__menu-bar`}
+        >
+          <div>Div1</div>
+          <div>Div2</div>
+          <div>Div3</div>
+        </div>
+        <div className={`${navActive ? "active" : ""} nav__menu-list`}>
+          {MENU_LIST.map((menu, idx) => (
+            <div
+              onClick={() => {
+                setActiveIdx(idx);
+                setNavActive(false);
+              }}
+              key={menu.text}
+            >
+              <NavItem active={activeIdx === idx} {...menu} />
+            </div>
+          ))}
+        </div>
+      </nav>
+    </header>
   );
 };
 
 export default Navbar;
-
-// function CustomLink({ to, children, ...props }) {
-//   const resolvedPath = useResolvedPath(to)
-//   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
-
-//   return (
-//     <li className={isActive ? "active" : ""}>
-//       <Link to={to} {...props}>
-//         {children}
-//       </Link>
-//     </li>
-//   )
-// }

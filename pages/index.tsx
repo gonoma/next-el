@@ -8,17 +8,20 @@ export default function Home() {
   console.log("public api url", process.env.NEXT_PUBLIC_API_URL)
   return (
 
-    <Navbar>
-      <div className="container">
+    <div >
+
+      <Navbar>
+      {/* <div className="container">
         <Routes>
           <Route path="/training" element={<Reading />} />
         </Routes>
-      </div>
-    </Navbar>
+      </div> */}
+      </Navbar>
 
-    // <h1>
-    //   This is the Home Page <br/>
-    //   <Link href="/training"> Training</Link>
-    // </h1>
+      <h1 className="text-green-900">
+        This is the Home Page
+      </h1>
+
+    </div>
   )
 }

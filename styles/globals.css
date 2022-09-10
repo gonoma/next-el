@@ -1,26 +1,138 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+/**
+ https://tailwindcss.com/docs/functions-and-directives -- Very good documentation about
+ tailwind css file structure.
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+ @tailwind base;
 
-* {
-  box-sizing: border-box;
-}
+ /**
+  * This injects Tailwind's component classes and any component classes
+  * registered by plugins.
+  */
+ @tailwind components;
+ 
+ /**
+  * This injects Tailwind's utility classes and any utility classes registered
+  * by plugins.
+  */
+ @tailwind utilities;
+ 
+ /**
+  * Use this directive to control where Tailwind injects the hover, focus,
+  * responsive, dark mode, and other variants of each class.
+  *
+  * If omitted, Tailwind will append these classes to the very end of
+  * your stylesheet by default.
+  */
+ @tailwind variants;
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+ /**********************/
+
+ @layer base {
+
+  h1 {
+    @apply text-2xl;
   }
-  body {
-    color: white;
-    background: black;
+
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
   }
+  /* body{
+    background-color: #96DEA4;
+  } */
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  header{
+    position: sticky;
+    z-index: 30;
+    top: 0;
+  }
+  nav{
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+  }
+  .nav__menu-bar{
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    cursor: pointer;
+  }
+  .nav__menu-bar div{
+    width: 40px;
+    height: 4px;
+    background-color: black;
+    border-radius: 2px;
+  }
+  .nav__menu-list{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    width: 288px;
+    row-gap: 24px;
+    right: -288px;
+    padding: 24px 16px;
+    transition: all 0.2s;
+    min-height: calc(100vh - 60px);
+    background-color: #f1f1f1;
+  }
+  .nav__menu-list.active{
+    right: 0;
+  }
+  .nav__link{
+    font-size: 18px; 
+    position: relative;
+    transition: all 0.2s;
+  }
+  
+  .nav__link:hover{
+   font-weight: bold;
+  }
+  
+  .center{
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (min-width: 768px) {
+    .nav__menu-bar{
+      display: none;
+    }
+    .nav__menu-list{
+      position: unset;
+      flex-direction: row;
+      min-height: fit-content;
+      width: fit-content;
+      column-gap: 24px;
+      align-items: center;
+    }
+    .nav__link::before{
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 6px;
+      bottom: -16px;
+      left: 0;
+      background-color: black;
+      transition: all 0.2s;
+    }
+    
+    .nav__link:hover:before{
+     width: 100%;
+    }
+  }
+
 }
