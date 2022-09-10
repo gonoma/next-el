@@ -11,8 +11,8 @@ const MENU_LIST = [
   { text: "Reading", href: "/training" },
 ];
 
-const Navbar = () => {
-  const [navActive, setNavActive] = useState(null);
+const Navbar = (props:any) => {
+  const [navActive, setNavActive] = useState(Boolean);
   const [activeIdx, setActiveIdx] = useState(-1);
 
   return (
