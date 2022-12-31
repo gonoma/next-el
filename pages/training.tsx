@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
 import Row from "react-bootstrap/Row";
 
 const themes = {
@@ -17,8 +17,8 @@ export default function Reading() {
   // Context lets us pass a value deep into the component tree
   // without explicitly threading it through every component.
   // Create a context for the current theme (with "light" as the default).
-  const ThemeContext = React.createContext(themes.light);
-  const LocaleContext = React.createContext(themes.light);
+  const ThemeContext = createContext("light");
+  const LocaleContext = createContext(themes.light);
 
   const [readingSpeed, setReadingSpeed] = useState(0);
   const router = useRouter();
@@ -58,13 +58,13 @@ export default function Reading() {
     // </div>
     <section className={theme}>
       <Row label="Name">
-        <input {...name} /> // Simplified
+        <input {...name} /> {/* Simplified*/}
       </Row>
       <Row label="Surname">
-        <input {...surname} /> // Simplified
+        <input {...surname} /> {/* Simplified*/}
       </Row>
       {/* <Row label="Language">{locale}</Row> */}
-      <Row label="Width">''{width}</Row>
+      <Row label="Width">{width}</Row>
 
       {/* <div className="bg-green-400">
         <h1 className={`text-center text-black-400 font-bold text-4xl`}>
