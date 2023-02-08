@@ -21,16 +21,13 @@ YoutubeEmbed.propTypes = {
 
 export default function About() {
   return (
-    // <h1 className="text-center text-green-900 font-bold text-4xl">
-    //   This is About Page
-    // </h1>
-
     <div className="about-page">
       <h1 className="text-center text-green-900 font-bold text-4xl">
         This is About Page
       </h1>
       <YoutubeEmbed embedID="xYMqo5fsbPw" />
       <YoutubeEmbed embedID="cw6k5rYmjs8" />
+      <YoutubeEmbed embedID="wgPjjwrNeHM" />
     </div>
   );
 }

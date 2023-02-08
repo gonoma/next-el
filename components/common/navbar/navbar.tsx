@@ -8,6 +8,7 @@ const MENU_LIST = [
   { text: "Home", href: "/" },
   { text: "About Us", href: "/about" },
   { text: "Contact", href: "/contact" },
+  { text: "Memory", href: "/memory" },
   { text: "Reading", href: "/training" },
 ];
 
