@@ -146,12 +146,14 @@
   * For the memory game
   */
 
+.memory-page {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+}
+
 .container {
-  position: relative;
   margin: auto;
-  width: 50%;
-  height: 50%;
-  align-items: center;
 }
 
 .board {

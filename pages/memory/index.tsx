@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const board = ["🤖", "👽", "👻", "🤡", "🐧", "🦚", "😄", "🚀", "🍺", "🐘"];
+const board = ["🤖", "👽", "👻", "🤡", "🐧", "🦚", "😄", "🚀"];
 export default function Home() {
   const [boardData, setBoardData] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
@@ -53,36 +53,37 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
-      <div className="memory-moves">
-        <p>{`Moves - ${moves}`}</p>
-      </div>
+    <div className="memory-page">
+      <div className="container">
+        <div className="memory-moves">
+          <p>{`Moves - ${moves}`}</p>
+        </div>
 
-      <div className="board">
-        {boardData.map((data, i) => {
-          const flipped = flippedCards.includes(i) ? true : false;
-          const matched = matchedCards.includes(i) ? true : false;
-          return (
-            <div
-              onClick={() => {
-                updateActiveCards(i);
-              }}
-              key={i}
-              className={`card ${flipped || matched ? "active" : ""} ${
-                matched ? "matched" : ""
-              } ${gameOver ? "gameover" : ""}`}
-            >
-              <div className="card-front">{data}</div>
-              <div className="card-back"></div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="reset">
-        <p className="font-bold">{`GameOver - ${gameOver}`}</p>
-        <button
-          onClick={() => initialize()}
-          className="
+        <div className="board">
+          {boardData.map((data, i) => {
+            const flipped = flippedCards.includes(i) ? true : false;
+            const matched = matchedCards.includes(i) ? true : false;
+            return (
+              <div
+                onClick={() => {
+                  updateActiveCards(i);
+                }}
+                key={i}
+                className={`card ${flipped || matched ? "active" : ""} ${
+                  matched ? "matched" : ""
+                } ${gameOver ? "gameover" : ""}`}
+              >
+                <div className="card-front">{data}</div>
+                <div className="card-back"></div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="reset">
+          <p className="font-bold">{`GameOver - ${gameOver}`}</p>
+          <button
+            onClick={() => initialize()}
+            className="
           bg-blue-500 
           hover:bg-blue-700 
           text-white 
@@ -91,9 +92,10 @@ export default function Home() {
           px-4 
           rounded 
           justify-center"
-        >
-          Reset
-        </button>
+          >
+            Reset
+          </button>
+        </div>
       </div>
     </div>
   );
