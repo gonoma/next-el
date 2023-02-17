@@ -7,7 +7,7 @@ import NavItem from "./navitem";
 const MENU_LIST = [
   { text: "About", href: "/about" },
   { text: "Memory", href: "/memory" },
-  { text: "Reading", href: "/training" },
+  { text: "Reading", href: "/reading" },
 ];
 
 const Navbar = (props: any) => {

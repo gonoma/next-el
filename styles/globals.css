@@ -67,6 +67,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #CBD5E1;
+    font-weight:bolder;
   }
   .nav__menu-bar{
     display: flex;

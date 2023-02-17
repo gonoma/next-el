@@ -60,7 +60,7 @@ export default function Home() {
 
       <div className="memory-page">
         <div className="container">
-          <div className="memory-moves">
+          <div className="memory-moves m-5">
             <p>{`Moves - ${moves}`}</p>
           </div>
 
@@ -85,14 +85,14 @@ export default function Home() {
             })}
           </div>
           <div className="reset">
-            <p className="font-bold">{`GameOver - ${gameOver}`}</p>
+            <p className="font-bold m-5">{`GameOver - ${gameOver}`}</p>
             <button
               onClick={() => initialize()}
               className="
           bg-blue-500 
           hover:bg-blue-700 
           text-white 
-          font-bold 
+          font-bold
           py-2 
           px-4 
           rounded 

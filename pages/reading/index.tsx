@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState, useEffect, createContext, useContext } from "react";
 import Row from "react-bootstrap/Row";
+import Navbar from "@components/common/navbar";
 
 const themes = {
   light: {
@@ -57,6 +58,8 @@ export default function Reading() {
     //   </p>
     // </div>
     <section className={theme}>
+      <Navbar></Navbar>
+
       <Row label="Name">
         <input {...name} /> {/* Simplified*/}
       </Row>
