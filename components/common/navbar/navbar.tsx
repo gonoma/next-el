@@ -5,9 +5,7 @@ import React, { useState } from "react";
 import NavItem from "./navitem";
 
 const MENU_LIST = [
-  { text: "Home", href: "/" },
-  { text: "About Us", href: "/about" },
-  { text: "Contact", href: "/contact" },
+  { text: "About", href: "/about" },
   { text: "Memory", href: "/memory" },
   { text: "Reading", href: "/training" },
 ];
@@ -21,7 +19,7 @@ const Navbar = (props: any) => {
       <nav className={`nav`}>
         <Link href={"/"}>
           <a>
-            <h1 className="logo">Efficient Learning</h1>
+            <h1 className="logo">Brain Train</h1>
           </a>
         </Link>
         <div
