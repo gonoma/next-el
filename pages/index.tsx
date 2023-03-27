@@ -37,7 +37,7 @@ export default function Home() {
           </p>
           <button
             onClick={generate}
-            className="inline-flex font-bold m-4 py-2.5 px-4 text-xs text-black bg-slate-300 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+            className="inline-flex font-bold m-4 py-2.5 px-4 text-s text-black bg-slate-300 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
           >
             new quote
           </button>
